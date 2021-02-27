@@ -1,0 +1,13 @@
+function solution(numbers) {
+    const answer = [];
+    for(let i = 0; i < numbers.length - 1; i++){
+        for(let j = i+1; j < numbers.length; j++){ 
+            answer.push(numbers[i] + numbers[j]);
+        }
+    }
+//answer[]에 있는 중복 값들 제거
+    const result = [...new Set(answer)];
+//result[] 오름차순 정렬
+    result.sort((a,b)=>a-b);
+    return result;
+}
